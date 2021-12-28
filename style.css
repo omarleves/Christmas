@@ -66,6 +66,12 @@ section{
     margin-bottom: 3rem;
     font-size: 4rem;
 }
+.heading span{
+    text-align: center;
+    color: var(--red);
+    margin-bottom: 3rem;
+    font-size: 4rem;
+}
 /*===========================================
 Global Section Styling End
 ===========================================*/
