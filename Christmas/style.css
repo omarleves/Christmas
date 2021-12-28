@@ -1,0 +1,746 @@
+/*===========================================
+Global Section Styling Start
+===========================================*/
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;500;600;700;800&family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+*{
+    font-family: 'Nunito', 'Poppins', sans-serif;
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none; border: none; 
+    text-transform: capitalize;
+    transition: all .2s linear; 
+}
+body{
+    overflow-x: hidden;
+}
+:root{
+    --red: #e60000;
+    --black: #222;
+    --white: #fff;
+    --light-color:#666;
+    --light-bg: #eee; 
+    --border: .2rem solid var(--black); 
+    --box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+}
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 7rem;
+}
+::-webkit-scrollbar{
+    width: 1rem;
+}
+::-webkit-scrollbar-track{
+    background: transparent;
+}
+::-webkit-scrollbar-thumb{
+    background: var(--red);
+}
+section{
+    padding: 3rem 9%;
+}
+.btn{
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 1rem 3rem;
+    background: var(--red);
+    color: var(--white);
+    font-size: 1.7rem;
+    box-shadow: var(--box-shadow);
+    cursor: pointer;
+}
+.btn:hover{
+    letter-spacing: .2rem;
+}
+@keyframes fadein{
+    0%{
+        opacity: 0;
+        transform: translateY(-4rem) scale(.4);
+    }
+}
+.heading{
+    text-align: center;
+    color: var(--black);
+    margin-bottom: 3rem;
+    font-size: 4rem;
+}
+/*===========================================
+Global Section Styling End
+===========================================*/
+
+
+/*===========================================
+Header Section Styling Start
+===========================================*/
+header{
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    box-shadow: var(--box-shadow);
+    background: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 9%;
+}
+header .logo{
+    font-size: 2.5rem;
+    color: var(--black);
+    font-weight: bolder;
+}
+header i{
+    color: var(--red);
+    margin-right: .5rem;
+}
+.navbar a{
+    margin: 0 1.5rem;
+    font-size: 1.7rem;
+    color: var(--black);
+}
+.navbar a:hover{
+    color: var(--red);
+}
+.icons div ,
+.icons a{
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.5rem;
+    border-radius: .5rem;
+    background: var(--light-bg);
+    font-size: 1.7rem;
+    color: var(--black);
+    margin-left: .3rem;
+    text-align: center;
+    cursor: pointer; 
+}
+.icons div:hover ,
+.icons a:hover{
+    color: var(--white);
+    background: var(--red);
+}
+#menu-btn{
+    display: none;
+}
+.search-form{
+    position: absolute;
+    top: 99%; left: 0; right: 0;
+    height: 6rem;
+    background: var(--white);
+    border-top: var(--border);
+    border-bottom: var(--border);
+    display: flex;
+    align-items: center;
+    padding: 0 2rem;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+}
+.search-form input{
+    width: 100%;
+    font-size: 1.6rem;
+    color: var(--light-color);
+    text-transform: none;
+}
+.search-form label{
+    font-size: 2.5rem;
+    margin-left: 2rem;
+    color: var(--black)
+}
+.search-form label:hover{
+    color: var(--red);
+}
+.active{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+/*===========================================
+Header Section Styling End
+===========================================*/
+
+
+/*===========================================
+Home Section Styling Start
+===========================================*/
+.home{
+    position: relative;
+    padding: 0; 
+    margin-top: 7.5rem;
+}
+.home .slide{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 2rem;
+    min-height: 60vh;
+    display: none;
+    width: 100%;
+    transition: all .3s ease-in-out;
+}
+.home .slide-1{
+    background: url(https://res.cloudinary.com/mommy-nearest/image/upload/c_crop,h_2560,w_5760,x_0,y_295/c_scale,f_auto,fl_lossy,q_75,w_848/w3lzkbcj5cmi0qzybbhm);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.home .slide-2{
+    background: url(https://cdn.pixabay.com/photo/2016/09/01/10/50/christmas-1635787_960_720.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.home .slide .content{
+    margin: auto;
+    text-align: center;
+    margin-top: 5%;
+    position: relative;
+    animation: fadein .2s linear backwards .6s; 
+}
+.home .slide .content span{
+    color: var(--black);
+    display: block;
+    font-size: 3rem;
+    text-shadow: var(--box-shadow);
+    
+}
+.home .slide .content h3{
+    font-size: 5rem;
+    color: var(--black);
+    text-shadow: var(--box-shadow);
+    text-transform: uppercase;
+}
+.home .next,
+.home .prev{
+    animation: fadein .2s linear backwards .4s;
+    margin: 1rem;
+    background: var(--red);
+    color: var(--white);
+    font-weight: 800;
+    box-shadow: var(--box-shadow);
+    position: relative;
+    text-align: center;
+    bottom: 10rem; right: 2rem;
+    float: right;
+}
+.home .next:hover,
+.home .prev:hover{
+    background: var(--white);
+    color: var(--red);
+    letter-spacing: 0;
+}
+/*===========================================
+Home Section Styling End
+===========================================*/
+
+
+/*===========================================
+Category Section Styling Start
+===========================================*/
+.category .box-continar{
+    display: grid;
+    grid-template-columns: repeat(auto-fit , minmax( 14rem , 1fr ));
+    gap: 2rem;
+    width: 100%;
+}
+
+.category .box-continar .box img{
+    height: 14rem;
+    width: 10rem;
+    margin-bottom: 1rem;
+}
+.category .box-continar .box h3{
+    font-size: 1.7rem;
+    color: var(--black);
+    font-weight: normal;
+    text-align: center;
+}
+.category .box-continar .box{
+    text-align: center;
+}
+.category .box-continar .box:hover h3{
+    color: var(--red)
+}
+/*===========================================
+Category Section Styling End
+===========================================*/
+
+
+/*===========================================
+About Section Styling Start
+===========================================*/
+.about{
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 7rem;
+}
+.about .image{
+    flex: 1rem 1rem 42rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+.about .image img{
+    height: 70vh;
+    width: 70vh; 
+    box-shadow: 4rem 4rem 0 var(--light-bg);
+}
+.about .content{
+    flex: 1rem 1rem 42rem;
+}
+.about .content .box{
+    padding: 3rem;
+    background: var(--light-bg);
+}
+.about .content .box h3{
+    font-size: 3rem;
+    color: var(--black)
+}
+.about .content .box p{
+    padding: 1rem 0;
+    line-height: 2;
+    color: var(--light-color);
+    font-size: 1.4rem;
+}
+.about .content .icons-continar{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 2rem;
+}
+.about .content .icons-continar .icons{
+    width: 30.9935%;
+    flex: 1rem 1rem 16rem;
+    background: var(--light-bg);
+    padding: 2rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+.about .content .icons-continar .icons i{
+    color: var(--red);
+    margin-bottom: 1rem;
+    font-size: 5rem;
+}
+.about .content .icons-continar .icons p{
+    font-size: 1.4rem;
+    color: var(--light-color)
+}
+/*===========================================
+About Section Styling End
+===========================================*/
+
+
+/*===========================================
+Shop Section Styling Start
+===========================================*/
+.shop{
+    background: var(--light-bg);
+}
+.shop h1 span{
+    color: var(--red);
+}
+.shop .box-continar{
+    display: grid;
+    grid-template-columns: repeat(auto-fit , minmax( 31rem , 1fr ));
+    gap: 2rem;
+    width: 100%;
+}
+.shop .box-continar .box{
+    text-align: center;
+    background: var(--white);
+    box-shadow: var(--box-shadow);
+}
+.shop .box-continar .box .image{
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+.shop .box-continar .box .image img{
+    width: 25rem;
+    height: 25rem;
+}
+.shop .box-continar .box:hover .image img{
+    transform: scale(1.1);
+}
+.shop .box-continar .box .image .icons{
+    position: absolute;
+    top: 1rem; left: 2rem;
+    transform: translateX(-10rem);
+}
+.shop .box-continar .box:hover .image .icons{
+    transform: translateX(0rem);
+}
+.shop .box-continar .box .image .icons a{
+    display: block;
+    line-height: 4.5rem;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    box-shadow: var(--box-shadow);
+}
+.shop .box-continar .box .content{
+    padding: 2rem;
+}
+.shop .box-continar .box .content h3{
+    font-size: 2rem;
+    color: var(--black);
+    padding-bottom: .5rem;
+    font-weight: normal;
+}
+.shop .box-continar .box .content .price{
+    font-size: 2rem;
+    font-weight: bolder;
+    color: var(--red);
+}
+.shop .box-continar .box .content .price span{
+    color: var(--light-color);
+    font-size: 1.5rem;
+    text-decoration: line-through;
+}
+/*===========================================
+Shop Section Styling End
+===========================================*/
+
+
+/*===========================================
+Banner Section Styling Start
+===========================================*/
+.banner{
+    background: url(https://cdn.pixabay.com/photo/2021/11/07/11/58/christmas-background-6775793__340.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.banner .content{
+    max-width: 40rem;
+    background: var(--white);
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    margin: 10rem 0;
+    padding: 3rem;
+}
+.banner .content span{
+    font-size: 2rem;
+    color: var(--red);
+}
+.banner .content h3{
+    font-size: 3rem;
+    color: var(--black);
+    padding-top: .5rem;
+}
+.banner .content p{
+    font-size: 1.4rem;
+    color: var(--light-color);
+    padding: 1rem 0;
+    line-height: 2rem;
+}
+/*===========================================
+Banner Section Styling End
+===========================================*/
+
+
+/*===========================================
+Galley Section Styling Start
+===========================================*/
+.gallery h1 span{
+    color: var(--red);
+}
+.gallery .box-continar{
+    display: grid;
+    grid-template-columns: repeat(auto-fit , minmax( 31rem , 1fr ));
+    gap: 2rem;
+    width: 100%;
+}
+.gallery .box-continar .box{
+    height: 25rem;
+    overflow: hidden;
+    position: relative; 
+}
+.gallery .box-continar .box img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.gallery .box-continar .box .content{
+    background: rgba(255 , 255 , 255 , .9);
+    display: none;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0; left: 0;
+    height: 100%;
+    width: 100%;
+    padding: 2rem;
+    text-align: center;
+}
+.gallery .box-continar .box .content h3{
+    font-size: 2rem;
+    color: var(--black);
+    animation: fadein .2s linear backwards; 
+}
+.gallery .box-continar .box .content p{
+    font-size: 1.4rem;
+    color: var(--black);
+    padding: 1rem 0;
+    line-height: 2rem;
+    animation: fadein .2s linear backwards .4s; 
+}
+.gallery .box-continar .box .content .btn{
+    animation: fadein .2s linear backwards .6s; 
+}
+.gallery .box-continar .box:hover .content{
+    display: flex;
+}
+/*===========================================
+Galley Section Styling End
+===========================================*/
+
+
+/*===========================================
+Massege Section Styling Start
+===========================================*/
+.massege{
+    background: url(https://image.freepik.com/free-psd/merry-christmas-happy-new-year-with-3d-empty-podium-christmas-ornaments_106244-1829.jpg ) no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 0;
+}
+.massege h3 span{
+    color: var(--red);
+}
+.massege form{
+    margin: 2rem auto;
+    background: var(--white);
+    text-align: center;
+    max-width: 40rem;
+    box-shadow: var(--box-shadow);
+    padding: 2rem;
+}
+.massege form h3{
+    font-size: 3rem;
+    color: var(--black)
+}
+.massege form .box{
+    width: 100%;
+    padding: 1.5rem 0;
+    margin: .7rem 0;
+    font-size: 1.6rem;
+    color: var(--light-color);
+    text-transform: none;
+    border-bottom: var(--border);
+}
+.massege form .box:focus{
+    border-color: var(--red);
+}
+.massege form textarea{
+    height: 15rem;
+    resize: none;
+
+}
+/*===========================================
+Massege Section Styling End
+===========================================*/
+
+
+/*===========================================
+Blogs Section Styling Start
+===========================================*/
+.blogs h1 span{
+    color: var(--red);
+}
+.blogs .box-continar{
+    display: grid;
+    grid-template-columns: repeat(auto-fit , minmax( 31rem , 1fr ));
+    gap: 2rem;
+    width: 100%;
+}
+.blogs .box-continar .box{
+    box-shadow: var(--box-shadow);
+}
+.blogs .box-continar .box .image{
+    height: 30rem;
+    width: 100%;
+    overflow: hidden;
+}
+.blogs .box-continar .box .image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.blogs .box-continar .box:hover .image img{
+    transform: scale(1.1);
+}
+.blogs .box-continar .box .content{
+    padding: 2rem;
+}
+.blogs .box-continar .box .content .data{
+    position: absolute;
+    margin-top: -6rem; margin-left: 22rem;
+    height: 8rem;
+    width: 8rem;
+    border: .5rem solid var(--white);
+    border-radius: 50%;
+    background: var(--red);
+    text-align: center;
+    padding-top: 2rem;
+    box-shadow: var(--box-shadow);
+}
+.blogs .box-continar .box .content .data h3{
+    font-size: 2.7rem;
+    line-height: 1rem;
+    color: var(--white);
+    margin-bottom: .7rem;
+}
+.blogs .box-continar .box .content .data span{
+    font-size: 1.5rem;
+    color: var(--white);
+}
+.blogs .box-continar .box .user{
+    display: block;
+    padding-bottom: 1rem;
+    font-size: 1.5rem;
+    color: var(--light-color);
+}
+.blogs .box-continar .box .user i{
+    padding-right: .5rem;
+    color: var(--red);
+}
+.blogs .box-continar .box .user:hover{
+    color: var(--red);
+}
+.blogs .box-continar .box .title{
+    font-size: 2rem;
+    color: var(--black);
+}
+.blogs .box-continar .box .title:hover{
+    color: var(--red);
+}
+.blogs .box-continar .box p{
+    padding: 1rem 0;
+    line-height: 2rem;
+    font-size: 1.4rem;
+}
+/*===========================================
+Blogs Section Styling End
+===========================================*/
+
+
+/*===========================================
+Services Section Styling Start
+===========================================*/
+.services{
+    display: grid;
+    grid-template-columns: repeat(auto-fit , minmax( 31rem , 1fr ));
+    gap: 2rem;
+    width: 100%;
+    background: var(--red);
+}
+.services .box{
+    text-align: center;
+    padding: 2rem;
+}
+.services .box img{
+    height: 10rem;
+    padding-bottom: .5rem;
+    font-size: 2rem;
+    color: var(--white);
+}
+.services .box h3{
+    padding: 1rem 0;
+    font-size: 2rem;
+    color: var(--white);
+}
+.services .box p{
+    line-height: 2;
+    font-size: 1.4rem;
+    color: var(--white);
+}
+/*===========================================
+Services Section Styling End
+===========================================*/
+
+
+/*===========================================
+Footer Section Styling Start
+===========================================*/
+.footer .box-continar{
+    display: grid;
+    grid-template-columns: repeat(auto-fit , minmax( 25rem , 1fr ));
+    gap: 2rem;
+    width: 100%;
+    background: var(--white);
+}
+.footer .box-continar .box h3{
+    font-size: 2.2rem;
+    color: var(--black);
+    padding: 1rem 0;
+}
+.footer .box-continar .box i{
+    color: var(--red);
+}
+.footer .box-continar .box a{
+    padding: 1rem 0;
+    font-size: 1.4rem;
+    color: var(--light-color);
+    display: block;
+}
+.footer .box-continar .box :hover{
+    color: var(--red);
+}
+.footer .box-continar .box :hover i{
+    padding-right: .5rem;
+    color: var(--red);
+}
+.footer .box-continar .box .envelope{
+    text-transform: none;
+}
+.footer .box-continar .box .btn:hover{
+    color: var(--white);
+}
+.footer .box-continar .box .share{
+    display: flex;
+    margin-top: 2rem
+}
+.footer .box-continar .box .share a{
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 3rem;
+    font-size: 1.7rem;
+    border-radius: .5rem;
+    background: var(--light-bg);
+    text-align: center;
+    color: var(--black);
+    box-shadow: var(--box-shadow);
+    margin-right: 1rem;
+}
+.footer .box-continar .box .share a:hover{
+    background: var(--red);
+    color: var(--white);
+}
+.footer .box-continar .box p{
+    padding: 1rem 0;
+    font-size: 1.7rem;
+    color: var(--light-color);
+}
+.footer .box-continar .box form .email{
+    border: var(--border);
+    box-shadow: var(--box-shadow);
+    width: 100%;
+    padding: 1.2rem 1.4rem;
+    margin: 1rem 0;
+    text-transform: none;
+    color: var(--light-color);
+    font-size: 1.6rem;
+}
+.footer .credit{
+    text-align: center;
+    padding: 1rem;
+    padding-top: 3rem;
+    margin-top: 3rem;
+    font-size: 2rem;
+    border-top: var(--border);
+    color: var(--light-color);
+}
+.footer .credit span{
+    color: var(--red);
+}
+/*===========================================
+Footer Section Styling End
+===========================================*/
