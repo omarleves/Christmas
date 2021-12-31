@@ -52,7 +52,7 @@ section{
     cursor: pointer;
 }
 .btn:hover{
-    letter-spacing: .2rem;
+    background: #ff1a1a;
 }
 @keyframes fadein{
     0%{
@@ -134,8 +134,7 @@ header i{
     top: 99%; left: 0; right: 0;
     height: 6rem;
     background: var(--white);
-    border-top: var(--border);
-    border-bottom: var(--border);
+    box-shadow: var(--box-shadow);
     display: flex;
     align-items: center;
     padding: 0 2rem;
@@ -506,7 +505,6 @@ Massege Section Styling Start
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    padding: 0;
 }
 .massege h3 span{
     color: var(--red);
